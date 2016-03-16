@@ -1,0 +1,7 @@
+<h1> <%= @game.player_1.name %> attacked <%= @game.player_2.name %>! </h1>
+<h2> <%= @game.player_1.name %>: <%= @game.player_1.hp %> HP </h2>
+<h2> <%= @game.player_2.name %>: <%= @game.player_2.hp %> HP </h2>
+
+<form action="/player_2_turn">
+  <input type="submit" value="switch turns!">
+</form>
