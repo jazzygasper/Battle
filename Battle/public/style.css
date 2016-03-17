@@ -32,7 +32,7 @@ input[type="submit"]
 
 }
 
-@keyframes animatedBackground {
+/*@keyframes animatedBackground {
 	0% { background-position: 0 0; }
 	100% { background-position: -300px 0; }
 }
@@ -64,4 +64,4 @@ input[type="submit"]
 	-webkit-animation: animatedBackground 10s linear infinite;
 	-ms-animation: animatedBackground 10s linear infinite;
 	-o-animation: animatedBackground 10s linear infinite;
-}
+}*/
