@@ -1,9 +1,16 @@
+
+
+<link rel="stylesheet" type="text/acss" href="/style.css">
+<div id="animate-area"></div>
+
+
+
 <div style="text-align: center; font-size: 30px">
   <div style="font-family:verdana; color: green"><%= @game.player1.name %> HP: <%= @game.player1.hit_points %></div>
     <h1 style="color: red; font-family: arial; font-size: 30px">vs</h1>
     <div style="font-family:Comic Sans MS; color:blue"> <%= @game.player2.name %> HP: <%= @game.player2.hit_points %></div>
 </div>
 
-<form action="/attack" method="post">
+<form action="/attack" method="post" align='center'>
   <input type="submit" value="Attack!🔫">
 </form>
