@@ -6,3 +6,7 @@
   💣
   <h2 style="font-family:Comic Sans MS; color:blue"><%= @game.player2.name %> now has <%= @game.player2.hit_points %> hitpoints!! </h2>
 </div>
+
+<form action="/play" method="post" align='center'>
+  <input type="submit" value="Switch turns!">
+</form>

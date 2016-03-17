@@ -14,9 +14,6 @@ class Battle < Sinatra::Base
     erb(:index)
   end
 
-
-
-
   post '/names' do
      $game = Game.new(Player.new(params[:name1]),Player.new(params[:name2]))
      redirect '/play'
@@ -24,6 +21,12 @@ class Battle < Sinatra::Base
 
   get '/play' do
     @game = $game
+    erb(:play)
+  end
+
+  post '/play' do
+    @game = $game
+    @game.switch_turns
     erb(:play)
   end
 
