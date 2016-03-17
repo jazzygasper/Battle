@@ -11,7 +11,7 @@
     <div style="font-family:Comic Sans MS; color:blue"> <%= @game.player2.name %> HP: <%= @game.player2.hit_points %></div>
 </div>
 
-<h2> Now it's <%= @game.current_turn.name %>'s turn! </h2>
+<h2> It's <%= @game.current_turn.name %>'s turn! </h2>
 
 <form action="/attack" method="post" align='center'>
   <input type="submit" value="Attack!🔫">
