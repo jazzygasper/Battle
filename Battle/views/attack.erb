@@ -2,9 +2,9 @@
 
 
 <div style="text-align: center; font-size: 50px">
-  <h2 style="font-family:arial; color:pink"><%= @game.player1.name %> attacks <%= @game.player2.name %></h2>
+  <h2 style="font-family:arial; color:pink"><%= @game.current_turn.name %> attacks <%= @game.opponent.name %></h2>
   💣
-  <h2 style="font-family:Comic Sans MS; color:blue"><%= @game.player2.name %> now has <%= @game.player2.hit_points %> hitpoints!! </h2>
+  <h2 style="font-family:Comic Sans MS; color:blue"><%= @game.opponent.name %> now has <%= @game.opponent.hit_points %> hitpoints!! </h2>
 </div>
 
 <form action="/play" method="post" align='center'>
