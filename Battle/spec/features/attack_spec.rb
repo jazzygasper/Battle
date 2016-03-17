@@ -15,12 +15,12 @@ feature "Attacking a player" do
     expect(page).to have_content("Player 2 attacks Player 1")
   end
 
-  # scenario "Get confirmation that player 2 has lost" do
-  #   sign_in_and_play
-  #   6ruby.times do click_button "Attack!"
-  #   click_button "Switch turns!"
-  #   end
-  #   click_button "Attack!"
-  #   expect(page).to have_content("Player 2 loses")
-  # end
+  scenario "Get confirmation that player 2 has lost" do
+    sign_in_and_play
+    10.times do click_button "Attack!"
+    click_button "Switch turns!"
+    end
+    click_button "Attack!"
+    expect(page).to have_content("Player 2 loses")
+  end
 end

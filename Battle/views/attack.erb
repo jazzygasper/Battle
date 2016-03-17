@@ -1,14 +1,18 @@
 <link rel="stylesheet" type="text/acss" href="/style.css">
 
 
-<div style="text-align: center; font-size: 50px">
-  <h2 style="font-family:arial; color:pink">
+<div style="text-align: center">
+  <h2 style="font-family:arial">
     <%= @game.current_turn.name %> attacks <%= @game.opponent_of(@game.current_turn).name %></h2>
   💣
-  <h2 style="font-family:Comic Sans MS; color:blue">
+  <h2 style="font-family:Comic Sans MS">
     <%= @game.opponent_of(@game.current_turn).name %> now has <%= @game.opponent_of(@game.current_turn).hit_points %> hitpoints!! </h2>
 </div>
-
-<form action="/switch" align='center'>
+<% if @game.opponent_of(@game.current_turn).hit_points == 0  %>
+<%= @game.opponent_of(@game.current_turn).name %> loses
+<% elsif @game.current_turn.dead?%>
+<%= @game.current_turn.name %> loses
+<% end %>
+<form action="/switch" method='post' align='center'>
   <input type="submit" value="Switch turns!">
 </form>

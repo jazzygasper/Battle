@@ -15,4 +15,9 @@ class Player
   def receive_damage
     @hit_points -= 5
   end
+
+  def dead?
+    @hit_points == 0
+  end
+
 end
