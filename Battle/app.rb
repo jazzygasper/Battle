@@ -36,7 +36,6 @@ enable :sessions
   end
 
   post '/attack' do
-
     Attack.new(Game.instance.current_opponent)
     Attack.begin(Game.instance.current_opponent)
     if Game.instance.game_over?
@@ -47,12 +46,25 @@ enable :sessions
   end
 
   get '/attack' do
-    erb :attack
+    if Game.instance.current_player.name == 'Computer'
+      erb :computer_attack
+    else
+      erb :attack
+    end
   end
 
   post '/switching' do
     Game.instance.switch_player
+    if Game.instance.current_player.name == 'Computer'
+      if Game.instance.game_over?
+        redirect '/game_over'
+      else
+        Attack.begin(Game.instance.current_opponent)
+        redirect '/attack'
+      end
+    else
     redirect('/play')
+    end
   end
 
   get '/game_over' do
