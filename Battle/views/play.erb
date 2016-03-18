@@ -8,3 +8,7 @@
 <form action="/attack" method="post">
   <button type="submit" value='Attack!'>Attack <%= Game.instance.current_opponent.name %></button>
 </form>
+</br>
+<form action="/poison" method="post">
+  <button type="submit" value='Poison!'> Poison <%= Game.instance.current_opponent.name %></button>
+</form>

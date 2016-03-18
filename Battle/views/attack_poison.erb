@@ -1,11 +1,9 @@
 <html style="text-align:center; font-family:tahoma"></html>
 <div><%= Game.instance.player_1.name%> has <%= Game.instance.player_1.hp%> HP   vs   <%= Game.instance.player_2.name%> has <%= Game.instance.player_2.hp%> HP</div>
 </br>
-<h1> You have attacked <%= Game.instance.current_opponent.name%> </h1>
-    <div>
-      <%= Game.instance.current_opponent.name%> now has <%= Game.instance.current_opponent.hp%> HP
-    </div>
+<h1> The computer has attacked you! </h1>
+<h2> But you have managed to poison the computer </h2>
  </br>
         <form action= '/switching' method = 'post'>
-          <button type="submit" value="done">AND THAT'S HOW IT'S DONE!</button>
+          <button type="submit" value="done">RE-GROUP!</button>
         </form>
