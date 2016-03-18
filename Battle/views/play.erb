@@ -4,7 +4,7 @@
 <div><%= Game.instance.player_1.name%> has <%= Game.instance.player_1.hp%> HP</div>
 <div><%= Game.instance.player_2.name%> has <%= Game.instance.player_2.hp%> HP</div>
 
-
+</br>
 <form action="/attack" method="post">
   <button type="submit" value='Attack!'>Attack <%= Game.instance.current_opponent.name %></button>
 </form>

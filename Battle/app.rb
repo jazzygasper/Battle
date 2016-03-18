@@ -22,11 +22,10 @@ enable :sessions
 
   post '/names' do
     player_1 = Player.new(params[:warrior_1])
-    p params[:warrior_2]
-    if Player.new(params[:warrior_2]) == nil
-      $player_2 = Player.new(params["Computer"])
+    if Player.new(params[:warrior_2]).name == nil
+      player_2 = Player.new("Computer")
     else
-    player_2 = Player.new(params[:warrior_2])
+      player_2 = Player.new(params[:warrior_2])
     end
     Game.create(player_1, player_2)
     redirect('/play')
