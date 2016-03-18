@@ -9,12 +9,25 @@ class Battle < Sinatra::Base
 enable :sessions
 
   get '/' do
+    erb :homepage
+  end
+
+  get '/2_player_form' do
     erb :index
+  end
+
+  get '/1_player_form' do
+    erb :single_index
   end
 
   post '/names' do
     player_1 = Player.new(params[:warrior_1])
+    p params[:warrior_2]
+    if Player.new(params[:warrior_2]) == nil
+      $player_2 = Player.new(params["Computer"])
+    else
     player_2 = Player.new(params[:warrior_2])
+    end
     Game.create(player_1, player_2)
     redirect('/play')
   end
