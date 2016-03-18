@@ -1,4 +1,6 @@
 <html style="text-align:center; font-family:tahoma"></html>
+<div><%= Game.instance.player_1.name%> has <%= Game.instance.player_1.hp%> HP   vs   <%= Game.instance.player_2.name%> has <%= Game.instance.player_2.hp%> HP</div>
+</br>
 <h1> You have attacked <%= Game.instance.current_opponent.name%> </h1>
     <div>
       <%= Game.instance.current_opponent.name%> now has <%= Game.instance.current_opponent.hp%> HP

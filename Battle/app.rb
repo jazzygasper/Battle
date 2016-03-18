@@ -56,14 +56,14 @@ enable :sessions
   post '/switching' do
     Game.instance.switch_player
     if Game.instance.current_player.name == 'Computer'
+      Attack.begin(Game.instance.current_opponent)
       if Game.instance.game_over?
         redirect '/game_over'
       else
-        Attack.begin(Game.instance.current_opponent)
         redirect '/attack'
       end
     else
-    redirect('/play')
+      redirect('/play')
     end
   end
 
