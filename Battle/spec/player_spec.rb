@@ -17,7 +17,7 @@ describe Player do
     describe 'lose_hp' do
 
       it 'reduces bob\'s hp' do
-        expect{bob.lose_hp}.to change{bob.hp}.by (-Player::DAMAGE)
+        expect{bob.lose_hp(4)}.to change{bob.hp}.by (-4)
 
       end
 

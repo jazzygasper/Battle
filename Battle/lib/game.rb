@@ -18,9 +18,9 @@ attr_reader :player_1, :player_2, :current_player
   	@game
   end
 
-  def attack
-      current_opponent.lose_hp
-  end
+  # def attack
+  #     current_opponent.lose_hp
+  # end
 
   def switch_player
   	@current_player == @player_1 ? @current_player = @player_2 : @current_player = @player_1

@@ -20,15 +20,6 @@ describe Game do
   		end
   	end
 
-	describe '#attack' do
-
-    	it 'a player, which reduces points' do
-      		expect(tina).to receive(:lose_hp)
-      		game.attack
-    	end
-
-	end
-
     describe '#switch_player' do
 
     	it "changes the player" do

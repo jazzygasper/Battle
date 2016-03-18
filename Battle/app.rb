@@ -3,9 +3,11 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/game'
+require './lib/attack'
 
 class Battle < Sinatra::Base
 enable :sessions
+
   get '/' do
     erb :index
   end
@@ -22,7 +24,9 @@ enable :sessions
   end
 
   post '/attack' do
-    Game.instance.attack
+
+    Attack.new(Game.instance.current_opponent)
+    Attack.begin(Game.instance.current_opponent)
     if Game.instance.game_over?
       redirect '/game_over'
     else

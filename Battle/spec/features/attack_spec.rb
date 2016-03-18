@@ -3,7 +3,7 @@ feature 'Attack Player' do
   scenario 'deals blow' do
     sign_in_and_play
     click_button 'Attack!'
-    expect(page).to have_text("Tina now has 50 HP")
+    expect(page).to have_text("You have attacked Tina")
   end
 
   scenario 'goes back to play screen after attack' do
